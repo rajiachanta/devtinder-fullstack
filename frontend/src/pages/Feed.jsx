@@ -34,26 +34,30 @@ function Feed() {
   }
 
   return (
-  <div>
-    <h1>Welcome to DevTinder Feed!</h1>
-    <p>Hello, {user.name}!</p>
-    <p>Email: {user.email}</p>
-    <p>Bio: {user.bio || 'No bio added'}</p>  {/* Add this line */}
-    <p>Location: {user.location || 'No location'}</p>  {/* Optional */}
-    <p>Skills: {user.skills?.join(', ') || 'No skills added'}</p>
-    
-    <button onClick={() => navigate('/edit-profile')}>
-      Edit Profile
-    </button>
-    
-    <button onClick={() => {
-      localStorage.removeItem('token');
-      navigate('/login');
-    }}>
-      Logout
-    </button>
-  </div>
-);
+    <div>
+      <h1>Welcome to DevTinder Feed!</h1>
+      <p>Hello, {user.name}!</p>
+      <p>Email: {user.email}</p>
+      <p>Bio: {user.bio || 'No bio added'}</p>
+      <p>Location: {user.location || 'No location'}</p>
+      <p>Skills: {user.skills?.join(', ') || 'No skills added'}</p>
+
+      <button onClick={() => navigate('/edit-profile')}>
+        Edit Profile
+      </button>
+
+      <button onClick={() => {
+        localStorage.removeItem('token');
+        navigate('/login');
+      }}>
+        Logout
+      </button>
+
+      <button onClick={() => navigate('/requests')}>
+        View Requests
+      </button>
+    </div>
+  );
 }
 
 export default Feed;
