@@ -6,7 +6,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate();  // ← Add this
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,11 +15,9 @@ function Login() {
         email,
         password
       });
-      console.log('Login success:', response.data);
       localStorage.setItem('token', response.data.token);
-      navigate('/feed');  // ← Add this - redirect to feed
+      navigate('/feed');
     } catch (err) {
-      console.error('Login error:', err);
       setError('Invalid email or password');
     }
   };
