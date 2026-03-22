@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Feed from './pages/Feed';
-import EditProfile from './pages/EditProfile'; 
+import EditProfile from './pages/EditProfile';
 import Requests from './pages/Requests';
- 
+import Connections from './pages/Connections';
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route path="/" element={<Login />} />
         <Route path="/requests" element={<Requests />} />
+        <Route path="/connections" element={<Connections />} />
       </Routes>
     </BrowserRouter>
   );

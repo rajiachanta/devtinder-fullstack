@@ -56,6 +56,10 @@ function Feed() {
       <button onClick={() => navigate('/requests')}>
         View Requests
       </button>
+
+      <button onClick={() => navigate('/connections')}>
+        My Connections ({user.connections?.length || 0})
+      </button>
     </div>
   );
 }
