@@ -17,7 +17,6 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
 
     public User registerUser(RegisterRequest request) {
-        // Check if email already exists
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new RuntimeException("Email already registered!");
         }
@@ -52,10 +51,8 @@ public class UserService {
     }
 
     public User updateProfile(String email, User updatedDetails) {
-        // Find existing user
         User existingUser = findByEmail(email);
 
-        // Update only fields that are provided (not null)
         if (updatedDetails.getName() != null) {
             existingUser.setName(updatedDetails.getName());
         }
@@ -81,7 +78,6 @@ public class UserService {
             existingUser.setExperienceLevel(updatedDetails.getExperienceLevel());
         }
 
-        // Save and return
         return userRepository.save(existingUser);
     }
 }

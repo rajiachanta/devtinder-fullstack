@@ -54,8 +54,6 @@ public class User {
     )
     private List<User> connections = new ArrayList<>();
 
-    // ⚠️ NO pendingRequests field here!
-
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
